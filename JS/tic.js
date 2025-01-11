@@ -18,6 +18,55 @@ const winningCombinations = [
   [2, 4, 6],
 ];
 
+// AI Function (Minimax Algorithm)
+function bestMove() {
+  let bestScore = -Infinity;
+  let move;
+  for (let i = 0; i < boardState.length; i++) {
+    if (boardState[i] === "") {
+      boardState[i] = "O";
+      let score = minimax(boardState, 0, false);
+      boardState[i] = "";
+      if (score > bestScore) {
+        bestScore = score;
+        move = i;
+      }
+    }
+  }
+  boardState[move] = "O";
+  updateBoard();
+  currentPlayer = "X";
+}
+
+function minimax(board, depth, isMaximizing) {
+  if (checkWin()) return isMaximizing ? -1 : 1;
+  if (checkDraw()) return 0;
+
+  if (isMaximizing) {
+    let bestScore = -Infinity;
+    for (let i = 0; i < board.length; i++) {
+      if (board[i] === "") {
+        board[i] = "O";
+        let score = minimax(board, depth + 1, false);
+        board[i] = "";
+        bestScore = Math.max(score, bestScore);
+      }
+    }
+    return bestScore;
+  } else {
+    let bestScore = Infinity;
+    for (let i = 0; i < board.length; i++) {
+      if (board[i] === "") {
+        board[i] = "X";
+        let score = minimax(board, depth + 1, true);
+        board[i] = "";
+        bestScore = Math.min(score, bestScore);
+      }
+    }
+    return bestScore;
+  }
+}
+
 // Create the board dynamically
 function createBoard() {
   board.innerHTML = "";
@@ -62,10 +111,10 @@ function checkDraw() {
 // Handle a cell click
 function handleCellClick(event) {
   const index = event.target.getAttribute("data-index");
-  if (boardState[index] !== "" || !gameActive) return;
+  if (boardState[index] !== "" || !gameActive || currentPlayer === "O") return;
 
   boardState[index] = currentPlayer;
-  event.target.textContent = currentPlayer;
+  updateBoard();
 
   if (checkWin()) {
     message.textContent = `Player ${currentPlayer} wins! 🎉`;
@@ -79,8 +128,17 @@ function handleCellClick(event) {
     return;
   }
 
-  currentPlayer = currentPlayer === "X" ? "O" : "X";
+  currentPlayer = "O";
   message.textContent = `Player ${currentPlayer}'s turn`;
+  setTimeout(bestMove, 500);
+}
+
+// Update the board UI
+function updateBoard() {
+  document.querySelectorAll(".cell").forEach((cell, index) => {
+    cell.textContent = boardState[index];
+    cell.className = `cell ${boardState[index].toLowerCase()}`;
+  });
 }
 
 // Restart the game
