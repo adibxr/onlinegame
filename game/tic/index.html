@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="icon" href="./img/icon.svg" type="image/png">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+            <div class="result"></div>
+            <div class="reset-container">
+                <button class="reset">Reset ↻</button>
+            </div>
+        <div class="board-container"><!--Board display by script.js--></div>
+        <div class="load-up">
+            <div class="player-choices">
+                <div class="player player-1">
+                    <h2>Player 1</h2>
+                    <div class="marker">
+                        <p>Choose you marker:</p>
+                        <div class="player-selection">
+                            <button class="player-chooser player-1-choice-x">X</button>
+                            <button class="player-chooser player-1-choice-o">O</button>
+                        </div>
+                    </div>
+                    <div class="color">
+                        <p>Choose your color:</p>
+                        <input id="player-1-color" name="player-1-color" type="color" class="player-1-color">
+                    </div>
+                    <div class="name">
+                        <label for="player-1-name">Enter your Name: <em>(optional)</em></label>
+                        <input id="player-1-name" name="player-1-name" type="text" class="player-1-name" placeholder="Player 1's Name">
+                    </div>
+                    <Fieldset>
+                        <legend>Choose your opponent:</legend>
+                        <div class="human">
+                            <label for="player-1-human">Human</label>
+                            <input id="player-1-human" name="player-1" type="radio" value="human" class="player-1-radio" checked>
+                        </div>
+                        <div class="ai">
+                            <label for="player-1-ai">AI</label>
+                            <input id="player-1-ai" name="player-1" type="radio" class="player-1-radio" value="ai">
+                        </div>
+                    </Fieldset>
+                </div>
+                <div class="button-container">
+                    <p>VS</p>
+                    <button class="start">Start Game >></button>
+                </div>
+                <div class="player player-2">
+                    <h2>Player 2</h2>
+                    <div class="marker">
+                        <p>Choose you marker:</p>
+                        <div class="player-selection">
+                            <button class="player-chooser player-2-choice-x">X</button>
+                            <button class="player-chooser player-2-choice-o">O</button>
+                        </div>
+                    </div>
+                    <div class="color">
+                        <p>Choose your color:</p>
+                        <input id="player-2-color" name="player-2-color" type="color" class="player-2-color">
+                    </div>
+                    <div class="name">
+                        <label for="player-2-name">Enter your Name: <em>(optional)</em></label>
+                        <input id="player-2-name" name="player-2-name" type="text" class="player-2-name" placeholder="Player 2's Name">
+                    </div>
+                    <Fieldset>
+                        <legend>Choose your opponent:</legend>
+                        <div class="human">
+                            <label for="player-2-human">Human</label>
+                            <input id="player-2-human" name="player-2" type="radio" value="human" class="player-2-radio">
+                        </div>
+                        <div class="ai">
+                            <label for="player-2-ai">AI</label>
+                            <input id="player-2-ai" name="player-2" type="radio" class="player-2-radio" value="ai" checked>
+                        </div>
+                    </Fieldset>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="https://github.com/Akshatik"><img src="./img/github.svg" alt="gitHub logo"> @Akshat </a> | <a href="https://github.com/adibxr">@Adi</a>
+        </footer>
+    </div>
+</body>
+</html>

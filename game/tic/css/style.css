@@ -1,0 +1,263 @@
+@font-face {
+    font-family: 'tac';
+    src: url(../font/TicTacToe.ttf);
+}
+.container {
+    flex: 1;
+    display: grid;
+    grid-template-rows: repeat(2, min-content) 1fr min-content;
+    align-items: center;
+    justify-items: center;
+    background-color: #dddcdcbc;
+    letter-spacing: 1px;
+    font-family: tac, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.board-container {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    height: 80%;
+    max-height: 500px;
+}
+
+#player-1-name, #player-2-name {
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+::placeholder {
+    opacity: 0.5;
+}
+
+.load-up {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-auto-columns: 100%;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1rem;
+}
+
+.load-up .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.load-up .button-container p {
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+.start {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #000000;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+  
+.start:hover {
+    background-color: #dddcdcbc;
+}
+
+.player-choices {
+    display: grid;
+    grid-template-columns: 250px 150px 250px;
+    gap: 3rem;
+    justify-content: center;
+    align-content: space-evenly;
+}
+
+.player {
+    border-radius: 15px;
+    border: 1px solid #000000;
+    display: grid;
+    grid-template-rows: repeat(5, min-content);
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    height: 100%;
+    padding-bottom: 0px;
+    font-weight: 500;
+}
+
+.player fieldset{
+    display: flex;
+    justify-content: space-around;
+}
+
+.player-choices .player-2 h2,
+.player-choices .player-1 h2{
+    margin-bottom: 0px;
+}
+
+.marker {
+    display: grid;
+}
+
+.marker p{
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.color {
+    display: flex;
+    gap: 1rem;
+}
+
+.color p {
+    margin-top: 0px
+}
+
+.player-selection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+.player-chooser {
+    font-size: 4rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.result {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    height: 27.6px;
+    padding-top: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.reset-container {
+    display: none;
+    width: 100%;
+    height: 30px;
+    margin: 1rem 0px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.reset{
+    padding: 10px 20px;
+    border: 1px solid #000000;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+  
+.reset:hover {
+    background-color: #dddcdcbc;
+}
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3));
+    grid-template-rows: repeat(3, calc(100% / 3));
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    font-size: 4rem;
+}
+
+.board div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:  0.2s ease-in-out;
+    border-bottom: 3px dashed #000000;
+    border-right: 3px dashed #000000;
+}
+
+.board div:hover {
+    background-color: #dddcdcbc;
+}
+
+#square6, #square7, #square8 {
+    border-bottom: none;
+}
+
+#square2, #square5, #square8 {
+    border-right: none;
+}
+
+footer{
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    bottom: 0;
+}
+
+footer [src="./img/github.svg"]{
+    width: 2rem;
+    height: auto;
+    filter: invert(0.5);
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #000;
+}
+
+footer a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+footer a:focus [src="./img/github.svg"],
+footer a:hover [src="./img/github.svg"] {
+    filter: invert(0);
+}
+
+footer a:focus {
+    color: #3E75C3;
+}
+
+footer a {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(51, 51, 51);
+}
