@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- This is ICON PACK-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    
+    <!-- This is END OF ICON PACK-->
+    <!-- External stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Page metadata -->
+    <title>COCO</title>
+    <link rel="icon" type="image/x-icon" href="icon/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:description" content="We do got games on our phone.">
+    <meta name="description" content="We do got games on our phone.">
+</head>
+<body onload="startTime()">
+
+    <!-- Navigation Menu -->
+    <div class="menubar">
+        <div class="topnav">
+            <a class="active" href="index.html">GAME</a>
+            <a href="project.html">PROJECT</a>
+            <a href="team.html">UPDATES</a>
+            
+            
+            
+            
+            <div class="topnav-right">
+                <a href="feedback.html"><img src="icon/feed.png" alt="Feedback" width="20" height="20"></a>
+                <a href="info.html"><img src="icon/war.png" alt="Information" width="20" height="20"></a>
+                <a id="txt"></a>
+                <a id="hide">STUDY</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <h1 class="text-center">CCID TEAM</h1>
+    <p class="text-center">FIND YOU GAME<a href="https://www.github.com/adibxr/coco">GitHub</a>.</p>
+    <p class="text-important">DROP A FEEDBACK!</p>
+
+    <!-- Sort Bar -->
+    <div class="sortbar">
+        <div class="topnav">
+            <a href="#" class="active">ALL</a>
+            <a href="#" data-filter="Board">BOARD</a>
+            <a href="#" data-filter="Action">ACTION</a>
+            <a href="#" data-filter="Race">RACE</a>
+            <a href="#" data-filter="Rot">ROT</a>
+
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <nav class="search-nav">
+        <div class="search-container">
+            <input class="search-box" id="search-box" type="search" onkeyup="searching(this)" placeholder="🔍SEARCH FOR GAME!">
+            <div class="search-results" id="search-results">
+                <div class="flex-container" id="game-container">
+                    <!-- Game Tiles -->
+                    
+                    <a href="game/tic/index.html" class="game-link" data-category="Board">
+                        <div class="game-tile-popular" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/toc.webp" alt="Tic Tac Toe" width="360" height="360">
+                            <h1 class="game-title">TIC TAC TOE</h1>
+                        </div>
+                    </a>
+                    
+                    <a href="game/chess/index.html" class="game-link" data-category="Board">
+                        <div class="game-tile" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/chess.webp" alt="Chess" width="360" height="360">
+                            <h1 class="game-title">CHESS</h1>
+                        </div>
+                    </a>
+                    <a href="game/carrom/index.html" class="game-link" data-category="Board">
+                        <div class="game-tile" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/carrom.webp" alt="Carrom" width="360" height="360">
+                            <h1 class="game-title">CARROM</h1>
+                        </div>
+                    </a>
+                    
+                    <a href="game/ludo/index.html" class="game-link" data-category="Board">
+                        <div class="game-tile" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/ludo.webp" alt="Ludo" width="360" height="360">
+                            <h1 class="game-title">LUDO</h1>
+                        </div>
+                    </a>
+                    
+                <a href="game/2048/index.html" class="game-link" data-category="Board">
+                        <div class="game-tile-popular" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/2048.webp" alt="2048" width="360" height="360">
+                            <h1 class="game-title">2048</h1>
+                        </div>
+                    </a>
+
+<a href="game/dino/index.html" class="game-link" data-category="Race">
+                        <div class="game-tile" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/dino.webp" alt="2048" width="360" height="360">
+                            <h1 class="game-title">CHROME DINO!</h1>
+                        </div>
+                    </a>
+
+
+<a href="game/ball puzzle/index.html" class="game-link" data-category="Rot">
+                        <div class="game-tile-popular" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/ballpuzzle.webp" alt="2048" width="360" height="360">
+                            <h1 class="game-title">BALL PUZZLE</h1>
+                        </div>
+                    </a>
+
+
+<a href="game/baldis/index.html" class="game-link" data-category="Action">
+                        <div class="game-tile-popular" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/baldis.webp" alt="2048" width="360" height="360">
+                            <h1 class="game-title">BALDIS BASIC</h1>
+                        </div>
+                    </a>
+
+
+<a href="game/bitlife/index.html" class="game-link" data-category="Rot">
+                        <div class="game-tile" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/bitlife.webp" alt="2048" width="360" height="360">
+                            <h1 class="game-title">BIT LIFE</h1>
+                        </div>
+                    </a>
+
+<a href="game/coreball/index.html" class="game-link" data-category="Action">
+                        <div class="game-tile-popular" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/coreball.webp" alt="2048" width="360" height="360">
+                            <h1 class="game-title">CORE BALL</h1>
+                        </div>
+                    </a>
+
+
+<a href="game/cuttheball/index.html" class="game-link" data-category="Action">
+                        <div class="game-tile-popular" style="width: 360px; height: 420px;">
+                            <img class="game-icon" src="src/cuttheball.webp" alt="2048" width="360" height="360">
+                            <h1 class="game-title">CUT THE BALL</h1>
+                        </div>
+                    </a>
+
+
+                
+                
+                </div>
+            </div>
+        </div>
+    </nav>
+
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Footer Section -->
+<!--footer class="footer">
+    <div class="footer-content">
+        <p>FOLLOW US ON </p>
+        
+        <!-- FontAwesome Icons -->
+        <!--a href="https://facebook.com" target="_blank"><i class="fab fa-facebook" style="font-size: 30px;"></i></a>
+       
+<!--footer-->
+
+
+    <!-- External Scripts -->
+    
+    <script>
+        // Filtering Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const categoryButtons = document.querySelectorAll(".sortbar a");
+            const gameTiles = document.querySelectorAll(".game-link");
+
+            categoryButtons.forEach((button) => {
+                button.addEventListener("click", (event) => {
+                    event.preventDefault();
+
+                    // Get the selected filter
+                    const filter = button.textContent.trim().toUpperCase();
+
+                    gameTiles.forEach((tile) => {
+                        const category = tile.getAttribute("data-category").toUpperCase();
+
+                        if (filter === "ALL") {
+                            tile.style.display = "block"; // Show all tiles
+                        } else {
+                            tile.style.display = category === filter ? "block" : "none"; // Filter tiles
+                        }
+                    });
+
+                    // Highlight the active button
+                    categoryButtons.forEach((btn) => btn.classList.remove("active"));
+                    button.classList.add("active");
+                });
+            });
+        });
+    </script>
+    <script src="JS/search.js"></script>
+    <script src="JS/hide.js"></script>
+    <script src="JS/clock.js"></script>
+</body>
+</html>

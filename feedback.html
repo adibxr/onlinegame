@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FEED BACK</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+  <style>
+    /* General Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Ensures footer stays at the bottom */
+    }
+
+    /* Center the container and form */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    /* Form styles - Increase form width and adjust padding */
+    .form-container {
+      width: 600px; /* Increased width for a larger form */
+      background: linear-gradient(#212121, #212121) padding-box,
+                  linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+      border: 2px solid transparent;
+      padding: 40px 30px; /* Increased padding */
+      font-size: 16px;
+      font-family: inherit;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-sizing: border-box;
+      border-radius: 16px;
+    }
+
+    .form-container button:active {
+      scale: 0.95;
+    }
+
+    .form-container .form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-container .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Increased gap between label and input */
+    }
+
+    .form-container .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #717171;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .form-container .form-group input,
+    .form-container .form-group textarea {
+      width: 90%;
+      padding: 14px 18px; /* Increased padding */
+      border-radius: 8px;
+      color: #fff;
+      font-family: inherit;
+      background-color: transparent;
+      border: 1px solid #414141;
+    }
+
+    .form-container .form-group textarea {
+      resize: none;
+      height: 120px; /* Increased height of textarea */
+    }
+
+    .form-container .form-group input::placeholder,
+    .form-container .form-group textarea::placeholder {
+      opacity: 0.5;
+    }
+
+    .form-container .form-group input:focus,
+    .form-container .form-group textarea:focus {
+      outline: none;
+      border-color: #e81cff;
+    }
+
+    .form-container .form-submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+      font-family: inherit;
+      color: #717171;
+      font-weight: 600;
+      width: 50%; /* Increased width of submit button */
+      background: #313131;
+      border: 1px solid #414141;
+      padding: 14px 18px;
+      font-size: 16px;
+      gap: 8px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .form-container .form-submit-btn:hover {
+      background-color: #fff;
+      border-color: #fff;
+    }
+
+    /* Button on top center */
+    .return-home-btn {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 20px;
+      background-color: #313131;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .return-home-btn:hover {
+      background-color: #e81cff;
+      color: black;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #212121;
+      width: 100%;
+    }
+
+    .footer-content {
+      margin-top: 20px;
+    }
+
+    .footer-content p {
+      margin: 0;
+    }
+
+    /* Social Icons */
+    .social-icons a {
+      color: #40c9ff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 24px; /* Adjust size of icons */
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #e81cff;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Return to Home button -->
+  <button class="return-home-btn" onclick="window.location.href='/'">BACK TO GAME SIGMA!!</button>
+
+  <div class="container">
+    <div class="form-container">
+      <form class="form" action="https://formspree.io/f/mkgnwdyj" method="POST">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="textarea">How Can We Help You?</label>
+          <textarea name="textarea" id="textarea" placeholder="Write your feedback here..." required></textarea>
+        </div>
+        <button class="form-submit-btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>CONNECT NOW!</p><br>
+      <div class="social-icons">
+        <a href="https://github.com/adibxr" target="_blank" class="fab fa-github"></a>
+        <a href="https://x.com/immortaladit" target="_blank" class="fab fa-twitter"></a>
+        <a href="https://instagram.com/adibxr" target="_blank" class="fab fa-instagram"></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
