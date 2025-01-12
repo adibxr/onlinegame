@@ -1,4 +1,4 @@
-/* style.css */
+/* General body and container styles */
 body {
   font-family: 'Arial', sans-serif;
   text-align: center;
@@ -7,14 +7,14 @@ body {
   margin: 0;
   padding: 0;
 }
-
-.container {
-  margin-top: 50px;
-}
-
-h1 {
+h1
+{
   color: #f5ba42;
-  font-size: 2.5rem;
+  }
+
+h2 {
+  color: #f5ba42;
+  
 }
 
 .board {
@@ -35,30 +35,34 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
   cursor: pointer;
   color: #f0f0f0;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: box-shadow 0.4s, transform 0.2s;
+}
+
+.cell.o {
+  color: yellow;
 }
 
 .cell:hover {
-  background-color: #444;
+  box-shadow: 7px 5px 56px -14px #C3D900;
   transform: scale(1.05);
-}
-
-.cell.taken {
-  pointer-events: none;
 }
 
 .cell.win {
   background-color: #4caf50;
+  animation: glow 1s infinite alternate;
 }
 
-#message {
-  font-size: 1.3rem;
-  color: #aaa;
-  margin-top: 20px;
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #4caf50;
+  }
+  100% {
+    box-shadow: 0 0 20px #4caf50;
+  }
 }
 
 button {
@@ -69,18 +73,70 @@ button {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
+  margin: 10px 5px;
 }
 
 button:hover {
   background-color: #ffcf70;
 }
 
-/* Custom styles for X and O */
-.cell.x::before {
-  content: url('https://img.icons8.com/ios-filled/50/f0f0f0/x.png'); /* Replace with custom X icon */
+#pointsDisplay {
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
-.cell.o::before {
-  content: url('https://img.icons8.com/ios-filled/50/f5ba42/o.png'); /* Replace with custom O icon */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4caf50; /* Default color for win */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.summary-box {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#homeScreen h1 {
+  font-size: 3rem;
+}
+
+#homeScreen button {
+  font-size: 1.5rem;
+  padding: 15px 30px;
 }
