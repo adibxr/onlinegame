@@ -1,0 +1,97 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for the menubar */
+.menubar {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    padding: 10px 0;
+    animation: slideIn 0.5s ease-out;
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    border-radius: 4px;
+}
+
+.topnav a:hover {
+    background-color: #575757;
+    transform: scale(1.1);
+}
+
+.topnav-right {
+    display: flex;
+    align-items: center;
+}
+
+.topnav-right a {
+    margin-left: 10px;
+}
+
+/* Curved Rectangle Form Container */
+.form-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    transform: translateY(50px);
+}
+
+/* Form Embedding */
+iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+}
+
+/* Hover effect for form container */
+.form-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframe for sliding menu animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
