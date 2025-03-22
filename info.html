@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INFO</title>
-    <!-- Link to FontAwesome for Social Media Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* General reset */
         * {
             margin: 0;
             padding: 0;
@@ -16,121 +14,113 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
+            background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Ensures footer stays at the bottom */
-            min-height: 100vh; /* Takes up the full height of the viewport */
-            margin: 0;
-            width: 100%; /* Ensures no horizontal scrolling */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
         }
 
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-grow: 1; /* Ensures content takes up available space */
             padding: 20px;
         }
 
         .cookie-card {
-            max-width: 320px;
-            padding: 1rem;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.05);
+            max-width: 500px;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .cookie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .title {
-            font-weight: 600;
-            color: rgb(31, 41, 55);
-            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+            font-size: 1.5rem;
         }
 
         .description {
             margin-top: 1rem;
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-            color: rgb(75, 85, 99);
+            font-size: 1rem;
+            color: #4b5563;
         }
 
         .description a {
-            --tw-text-opacity: 1;
-            color: rgb(59, 130, 246);
+            color: #3b82f6;
+            text-decoration: none;
         }
 
         .description a:hover {
-            -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
+            text-decoration: underline;
         }
 
         .actions {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 1rem;
-            column-gap: 1rem;
-            flex-shrink: 0;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .pref, .accept {
+            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
 
         .pref {
-            font-size: 0.75rem;
-            line-height: 1rem;
-            color: rgb(31, 41, 55);
-            -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            background-color: transparent;
+            background: #e5e7eb;
+            color: #1f2937;
         }
 
         .pref:hover {
-            color: rgb(156, 163, 175);
-        }
-
-        .pref:focus {
-            outline: 2px solid transparent;
-            outline-offset: 2px;
+            background: #d1d5db;
         }
 
         .accept {
-            font-size: 0.75rem;
-            line-height: 1rem;
-            background-color: rgb(17, 24, 39);
-            font-weight: 500;
-            border-radius: 0.5rem;
+            background: #111827;
             color: #fff;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 0.625rem;
-            padding-bottom: 0.625rem;
-            border: none;
-            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .accept:hover {
-            background-color: rgb(55, 65, 81);
+            background: #374151;
         }
 
-        .accept:focus {
-            outline: 2px solid transparent;
-            outline-offset: 2px;
-        }
-
-        /* Footer styles */
         footer {
-            background-color: #fff;
-            padding: 1rem;
+            position: absolute;
+            bottom: 0;
             width: 100%;
             text-align: center;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-            border-top: 1px solid #e2e8f0; /* Adds a subtle divider above the footer */
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
         }
 
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .social-icons a {
@@ -140,12 +130,7 @@
         }
 
         .social-icons a:hover {
-            color: rgb(59, 130, 246);
-        }
-
-        /* Prevent horizontal scrolling */
-        html, body {
-            overflow-x: hidden;
+            color: #3b82f6;
         }
 
     </style>
@@ -156,33 +141,25 @@
             <span class="title">📚 CCID TEAM </span>
             <p class="description">
                 Welcome to <strong>COCO</strong> 🎮📚, the ultimate platform combining fun and productivity! 
-                Here, you can enjoy a variety of web games while also staying productive. 
-                Need to focus? No problem! You can quickly hide the game to reveal your study page.
+                Here, you can enjoy a variety of web games while also staying productive.
             </p>
             <p class="description">
-                Learn more about how we seamlessly blend entertainment with productivity, 
-                and keep your secret gaming life! 😎 
-                <a href="https://wa.me/+918766207219">Read More About Us</a>
+                Learn more about how we seamlessly blend entertainment with productivity. 
+                <a href="https://wa.me/+918287855960">Read More About Us</a>
             </p>
             <div class="actions">
-                <button class="pref">
-                    Manage Preferences
-                </button>
-                <a href="index.html"><button class="accept">
-                    ACCEPT & GO HOME
-                </button></a>
+                <button class="pref">Manage Preferences</button>
+                <a href="index.html"><button class="accept">ACCEPT & GO HOME</button></a>
             </div>
         </div>
     </div>
-
-    <!-- Footer Section -->
     <footer>
         <p>Connect Now</p>
         <div class="social-icons">
             <a href="https://github.com/adibxr" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://x.com/immortaladit" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com/adibxr" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com/immortaladi" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/adibxr" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/adi.bxr" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/adibxr" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
 </body>

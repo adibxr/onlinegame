@@ -3,23 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FEED BACK</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+  <title>FEEDBACK</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* General Reset */
     body, html {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: white;
+      background: linear-gradient(-45deg, #f3f3f3, #e3e3e3, #ffffff, #d6d6d6);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      color: #333;
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Ensures footer stays at the bottom */
+      justify-content: space-between;
     }
 
-    /* Center the container and form */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Center the container */
     .container {
       display: flex;
       justify-content: center;
@@ -27,150 +35,105 @@
       flex-grow: 1;
     }
 
-    /* Form styles - Increase form width and adjust padding */
+    /* Form styles */
     .form-container {
-      width: 600px; /* Increased width for a larger form */
-      background: linear-gradient(#212121, #212121) padding-box,
-                  linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
-      border: 2px solid transparent;
-      padding: 40px 30px; /* Increased padding */
+      width: 600px;
+      background: #fff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
       font-size: 16px;
-      font-family: inherit;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      box-sizing: border-box;
-      border-radius: 16px;
-    }
-
-    .form-container button:active {
-      scale: 0.95;
-    }
-
-    .form-container .form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      border-radius: 12px;
     }
 
     .form-container .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px; /* Increased gap between label and input */
+      margin-bottom: 20px;
     }
 
     .form-container .form-group label {
       display: block;
       margin-bottom: 5px;
-      color: #717171;
       font-weight: 600;
-      font-size: 14px;
+      color: #555;
     }
 
     .form-container .form-group input,
     .form-container .form-group textarea {
-      width: 90%;
-      padding: 14px 18px; /* Increased padding */
+      width: 100%;
+      padding: 12px;
       border-radius: 8px;
-      color: #fff;
-      font-family: inherit;
-      background-color: transparent;
-      border: 1px solid #414141;
-    }
-
-    .form-container .form-group textarea {
-      resize: none;
-      height: 120px; /* Increased height of textarea */
-    }
-
-    .form-container .form-group input::placeholder,
-    .form-container .form-group textarea::placeholder {
-      opacity: 0.5;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      transition: border 0.3s ease-in-out;
     }
 
     .form-container .form-group input:focus,
     .form-container .form-group textarea:focus {
+      border-color: #40c9ff;
       outline: none;
-      border-color: #e81cff;
+    }
+
+    .form-container .form-group textarea {
+      resize: none;
+      height: 100px;
     }
 
     .form-container .form-submit-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      align-self: center;
-      font-family: inherit;
-      color: #717171;
-      font-weight: 600;
-      width: 50%; /* Increased width of submit button */
-      background: #313131;
-      border: 1px solid #414141;
-      padding: 14px 18px;
-      font-size: 16px;
-      gap: 8px;
+      width: 100%;
+      background: #40c9ff;
+      color: white;
+      padding: 12px;
+      border: none;
       cursor: pointer;
       border-radius: 6px;
+      font-size: 16px;
+      transition: background 0.3s ease-in-out;
     }
 
     .form-container .form-submit-btn:hover {
-      background-color: #fff;
-      border-color: #fff;
+      background: #0099cc;
     }
 
-    /* Button on top center */
+    /* Return Button */
     .return-home-btn {
       position: absolute;
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
       padding: 12px 20px;
-      background-color: #313131;
+      background-color: #40c9ff;
       color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: background 0.3s;
     }
 
     .return-home-btn:hover {
-      background-color: #e81cff;
-      color: black;
+      background-color: #0099cc;
     }
 
     /* Footer */
     footer {
       text-align: center;
       padding: 20px 0;
-      background-color: #212121;
-      width: 100%;
+      background: #f1f1f1;
+      color: #555;
     }
 
-    .footer-content {
-      margin-top: 20px;
-    }
-
-    .footer-content p {
-      margin: 0;
-    }
-
-    /* Social Icons */
     .social-icons a {
       color: #40c9ff;
       text-decoration: none;
       margin: 0 10px;
-      font-size: 24px; /* Adjust size of icons */
-      transition: color 0.3s ease;
+      font-size: 24px;
+      transition: color 0.3s;
     }
 
     .social-icons a:hover {
-      color: #e81cff;
+      color: #0099cc;
     }
-
   </style>
 </head>
 <body>
-  <!-- Return to Home button -->
   <button class="return-home-btn" onclick="window.location.href='/'">BACK TO GAME SIGMA!!</button>
 
   <div class="container">
@@ -191,11 +154,11 @@
 
   <footer>
     <div class="footer-content">
-      <p>CONNECT NOW!</p><br>
+      <p>CONNECT NOW!</p>
       <div class="social-icons">
         <a href="https://github.com/adibxr" target="_blank" class="fab fa-github"></a>
-        <a href="https://x.com/immortaladit" target="_blank" class="fab fa-twitter"></a>
-        <a href="https://instagram.com/adibxr" target="_blank" class="fab fa-instagram"></a>
+        <a href="https://x.com/adibxr" target="_blank" class="fab fa-twitter"></a>
+        <a href="https://instagram.com/adi.bxr" target="_blank" class="fab fa-instagram"></a>
       </div>
     </div>
   </footer>
